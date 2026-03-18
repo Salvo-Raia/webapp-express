@@ -7,7 +7,8 @@ const {
 
 // Index controller
 function index(req, res) {
-  const moviesSQL = "SELECT * FROM movies";
+  const moviesSQL =
+    "SELECT movies.*, AVG(reviews.vote) as average_vote FROM db_movies.movies INNER JOIN reviews ON movie_id = reviews.movie_id GROUP BY movies.id ORDER BY movies.id ASC";
   connection.query(moviesSQL, (err, result) => {
     if (err) return handleFailedQuery(err, res);
     console.log(result);
@@ -23,14 +24,20 @@ function index(req, res) {
 function show(req, res) {
   const { id } = req.params;
   const moviesSQL = "SELECT * FROM movies WHERE id = ?";
-  connection.query(moviesSQL, [id], (err, result) => {
+  connection.query(moviesSQL, [id], (err, movieResult) => {
     if (err) return handleFailedQuery(err, res);
-    const [movie] = result;
+    const [movie] = movieResult;
     if (!movie) return handleResourceNotFound(res);
-    res.json({
-      message: `Movie Detail for movie ${id}`,
-      result: movie,
-      success: true,
+
+    const reviewsSQL = "SELECT * FROM reviews WHERE movie_id = ?";
+    connection.query(reviewsSQL, [id], (err, reviewResult) => {
+      if (err) return handleFailedQuery(err, res);
+      movie.reviews = reviewResult;
+      res.json({
+        message: `Movie Detail for movie ${id}`,
+        result: movie,
+        success: true,
+      });
     });
   });
 }
