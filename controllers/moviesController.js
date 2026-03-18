@@ -1,6 +1,9 @@
 //Imports
 const connection = require("../database/dbConnection");
-const { handleFailedQuery } = require("../utils/dbUtils");
+const {
+  handleFailedQuery,
+  handleResourceNotFound,
+} = require("../utils/dbUtils");
 
 // Index controller
 function index(req, res) {
@@ -21,10 +24,12 @@ function show(req, res) {
   const { id } = req.params;
   const moviesSQL = "SELECT * FROM movies WHERE id = ?";
   connection.query(moviesSQL, [id], (err, result) => {
-    if (err) return handleFailedQuery(err, ers);
+    if (err) return handleFailedQuery(err, res);
+    const [movie] = result;
+    if (!movie) return handleResourceNotFound(res);
     res.json({
       message: `Movie Detail for movie ${id}`,
-      result: result[0],
+      result: movie,
       success: true,
     });
   });
