@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const connection = require("../database/dbConnection");
 
+const { handleFailedQuery } = require("../utils/dbUtils");
+
 // Root
 router.get("/", (req, res) => {
   res.send("Welcome to Boolean Movies API!");
@@ -17,11 +19,7 @@ router.get("/test-error", (req, res) => {
 router.get("/movies", (req, res) => {
   const moviesSQL = "SELECT * FROM movies";
   connection.query(moviesSQL, (err, result) => {
-    if (err)
-      res.status(500).json({
-        message: "Database query failed",
-        success: false,
-      });
+    if (err) return handleFailedQuery(err, res);
     console.log(result);
     res.json({
       message: "Movie Catalogue",
