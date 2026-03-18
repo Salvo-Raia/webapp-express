@@ -24,7 +24,7 @@ function show(req, res) {
     if (err) return handleFailedQuery(err, ers);
     res.json({
       message: `Movie Detail for movie ${id}`,
-      result: result,
+      result: result[0],
       success: true,
     });
   });
