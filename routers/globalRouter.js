@@ -8,8 +8,13 @@ router.get("/", (req, res) => {
   res.send("Welcome to Boolean Movies API!");
 });
 
-// Index
+// CRUD Routes
 router.get("/index", moviesController.index);
+router.get("/:id", moviesController.show);
+router.post("/", moviesController.store);
+router.put("/:id", moviesController.update);
+router.patch("/:id", moviesController.modify);
+router.delete("/:id", moviesController.destroy);
 
 // Test Error Route
 router.get("/test-error", (req, res) => {

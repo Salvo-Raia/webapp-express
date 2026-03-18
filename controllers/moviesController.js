@@ -16,4 +16,15 @@ function index(req, res) {
   });
 }
 
-module.exports = { index };
+// Show controller
+function show(req, res) {}
+
+function store(req, res) {}
+
+function update(req, res) {}
+
+function modify(req, res) {}
+
+function destroy(req, res) {}
+
+module.exports = { index, show, store, update, modify, destroy };
