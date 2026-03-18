@@ -1,25 +1,38 @@
 const express = require("express");
 const app = express();
 const errorHandlers = require("./middlewares/errorHandlers");
+const connection = require("./database/dbConnection");
 
 // Middlewares
 app.use(express.static("public"));
 app.use(express.json());
 
 // Test Route
-const connection = require("./database/dbConnection");
-
 app.get("/", (req, res) => {
-  const moviesSQL = "SELECT * FROM movies";
-  connection.query(moviesSQL, (err, result) => {
-    console.log(result);
-  });
   res.send("Welcome to Boolean Movies API!");
 });
 
 app.get("/test-error", (req, res) => {
   x.y.z;
   res.send("You should not be able to see this message");
+});
+
+// Movies Route
+app.get("/movies", (req, res) => {
+  const moviesSQL = "SELECT * FROM movies";
+  connection.query(moviesSQL, (err, result) => {
+    if (err)
+      res.status(500).json({
+        message: "Database query failed",
+        success: false,
+      });
+    console.log(result);
+    res.json({
+      message: "Movie Catalogue",
+      result: result,
+      success: true,
+    });
+  });
 });
 
 // Error Handler Middlewares
