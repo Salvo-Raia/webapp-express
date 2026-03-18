@@ -1,8 +1,9 @@
+// Imports
 const express = require("express");
 const app = express();
 const globalRouter = require("./routers/globalRouter");
-const errorHandlers = require("./middlewares/errorHandlers");
 const logger = require("./middlewares/logger");
+const errorHandlers = require("./middlewares/errorHandlers");
 
 // Middlewares
 app.use(logger);

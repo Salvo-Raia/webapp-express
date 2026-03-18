@@ -15,9 +15,9 @@ function logger(req, res, next) {
 
   const completeDate = `${fullYear}/${month}/${date}`;
   const time = `${hours}:${minutes}:${seconds}`;
-  const reqInfos = `${req.method} ${req.url}`;
+  const requestInfos = `${req.method} ${req.url}`;
 
-  console.log(`[INFO]: ${completeDate} ${time} - ${reqInfos}`);
+  console.log(`[INFO]: ${completeDate} ${time} - ${requestInfos}`);
 
   next();
 }
