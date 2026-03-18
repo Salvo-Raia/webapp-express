@@ -7,7 +7,13 @@ app.use(express.static("public"));
 app.use(express.json());
 
 // Test Route
+const connection = require("./database/dbConnection");
+
 app.get("/", (req, res) => {
+  const moviesSQL = "SELECT * FROM movies";
+  connection.query(moviesSQL, (err, result) => {
+    console.log(result);
+  });
   res.send("Welcome to Boolean Movies API!");
 });
 
