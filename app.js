@@ -21,6 +21,12 @@ app.use(errorHandlers.notFound);
 app.use(errorHandlers.internalServerError);
 
 // Server start
-app.listen(3000, () => {
-  console.log("Server is listening");
+app.listen(process.env.APP_PORT, () => {
+  console.log("Server enviroment: " + process.env.APP_MODE);
+  console.log(
+    "Server is listening on " +
+      process.env.APP_URL +
+      ", port " +
+      process.env.APP_PORT,
+  );
 });
