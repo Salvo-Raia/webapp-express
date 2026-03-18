@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express();
 const globalRouter = require("./routers/globalRouter");
+const movieRouter = require("./routers/movieRouter");
 const logger = require("./middlewares/logger");
 const errorHandlers = require("./middlewares/errorHandlers");
 
@@ -11,7 +12,8 @@ app.use(express.static("public"));
 app.use(express.json());
 
 // Routes
-app.use(globalRouter);
+app.use("/", globalRouter);
+app.use("/movies", movieRouter);
 
 // Error Handler Middlewares
 app.use(errorHandlers.notFound);
