@@ -3,13 +3,8 @@ const express = require("express");
 const router = express.Router();
 const moviesController = require("../controllers/moviesController");
 
-// Root
-router.get("/", (req, res) => {
-  res.send("Welcome to Boolean Movies API!");
-});
-
 // CRUD Routes
-router.get("/index", moviesController.index);
+router.get("/", moviesController.index);
 router.get("/:id", moviesController.show);
 router.post("/", moviesController.store);
 router.put("/:id", moviesController.update);

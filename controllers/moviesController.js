@@ -17,7 +17,18 @@ function index(req, res) {
 }
 
 // Show controller
-function show(req, res) {}
+function show(req, res) {
+  const { id } = req.params;
+  const moviesSQL = "SELECT * FROM movies WHERE id = ?";
+  connection.query(moviesSQL, [id], (err, result) => {
+    if (err) return handleFailedQuery(err, ers);
+    res.json({
+      message: `Movie Detail for movie ${id}`,
+      result: result,
+      success: true,
+    });
+  });
+}
 
 function store(req, res) {}
 
