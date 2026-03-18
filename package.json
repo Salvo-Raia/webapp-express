@@ -10,13 +10,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Salvo-Raia/webapp-express"
   },
   "license": "ISC",
   "author": "Salvo Raia",
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node --watch app.js", 
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
