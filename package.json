@@ -1,0 +1,22 @@
+{
+  "name": "webapp-express",
+  "version": "1.0.0",
+  "description": "Backend API express librari for movie catalogue",
+  "keywords": [
+    "API",
+    "Express",
+    "Movie",
+    "Boolean"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "ISC",
+  "author": "Salvo Raia",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
