@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const connection = require("../database/dbConnection");
-
 const { handleFailedQuery } = require("../utils/dbUtils");
 
 // Root
@@ -12,7 +11,9 @@ router.get("/", (req, res) => {
 // Test Error Route
 router.get("/test-error", (req, res) => {
   x.y.z;
-  res.send("You should not be able to see this message");
+  res.send(
+    "You should not be able to see this message. If this is the case, please, check function internalServerError in errorHandlers.js",
+  );
 });
 
 // Movies Route
