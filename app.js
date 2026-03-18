@@ -1,14 +1,10 @@
 const express = require("express");
 const app = express();
-const logger = require("./middlewares/logger");
 const errorHandlers = require("./middlewares/errorHandlers");
 
 // Middlewares
-app.use(logger);
 app.use(express.static("public"));
 app.use(express.json());
-app.use(errorHandlers.notFound);
-app.use(errorHandlers.internalServerError);
 
 // Test Route
 app.get("/", (req, res) => {
@@ -19,6 +15,10 @@ app.get("/test-error", (req, res) => {
   x.y.z;
   res.send("You should not be able to see this message");
 });
+
+// Error Handler Middlewares
+app.use(errorHandlers.notFound);
+app.use(errorHandlers.internalServerError);
 
 // Server start
 app.listen(3000, () => {
