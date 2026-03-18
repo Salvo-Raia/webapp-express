@@ -9,12 +9,15 @@ const {
 function index(req, res) {
   const moviesSQL =
     "SELECT movies.*, AVG(reviews.vote) as average_vote FROM db_movies.movies INNER JOIN reviews ON movie_id = reviews.movie_id GROUP BY movies.id ORDER BY movies.id ASC";
-  connection.query(moviesSQL, (err, result) => {
+  connection.query(moviesSQL, (err, moviesResult) => {
     if (err) return handleFailedQuery(err, res);
-    console.log(result);
+    const movies = moviesResult.map((movie) => {
+      return { ...movie, image: buildMovieImagePath(movie.image) };
+    });
+
     res.json({
       message: "Movie Catalogue",
-      result: result,
+      result: movies,
       success: true,
     });
   });
@@ -33,6 +36,7 @@ function show(req, res) {
     connection.query(reviewsSQL, [id], (err, reviewResult) => {
       if (err) return handleFailedQuery(err, res);
       movie.reviews = reviewResult;
+      movie.image = buildMovieImagePath(movie.image);
       res.json({
         message: `Movie Detail for movie ${id}`,
         result: movie,
@@ -49,5 +53,9 @@ function update(req, res) {}
 function modify(req, res) {}
 
 function destroy(req, res) {}
+
+function buildMovieImagePath(image) {
+  return `${process.env.APP_URL}:${process.env.APP_PORT}/movies_covers/${image}`;
+}
 
 module.exports = { index, show, store, update, modify, destroy };
