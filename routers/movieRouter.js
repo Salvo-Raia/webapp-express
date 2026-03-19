@@ -7,6 +7,7 @@ const moviesController = require("../controllers/moviesController");
 movieRouter.get("/", moviesController.index);
 movieRouter.get("/:id", moviesController.show);
 movieRouter.post("/", moviesController.store);
+movieRouter.post("/:id/review", moviesController.storeReview);
 movieRouter.put("/:id", moviesController.update);
 movieRouter.patch("/:id", moviesController.modify);
 movieRouter.delete("/:id", moviesController.destroy);

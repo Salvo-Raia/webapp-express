@@ -52,6 +52,26 @@ function show(req, res) {
 
 function store(req, res) {}
 
+// Store Review controller
+const storeReview = (req, res) => {
+  const { id } = req.params;
+  const { name, vote, text } = req.body;
+
+  const storeReviewSQL =
+    "INSERT INTO reviews (movie_id, name, vote, text) VALUES (?, ?, ?, ?)";
+
+  connection.query(storeReviewSQL, [id, name, vote, text], (err, result) => {
+    console.log(result.insertId);
+
+    const showReviewSQL = "SELECT * FROM reviews WHERE id = ?";
+
+    connection.query(showReviewSQL, [result.insertId], (err, result) => {
+      const [review] = result;
+      res.send(result);
+    });
+  });
+};
+
 function update(req, res) {}
 
 function modify(req, res) {}
@@ -62,4 +82,4 @@ function buildMovieImagePath(image) {
   return `${process.env.APP_URL}:${process.env.APP_PORT}/movies_covers/${image}`;
 }
 
-module.exports = { index, show, store, update, modify, destroy };
+module.exports = { index, show, store, storeReview, update, modify, destroy };
