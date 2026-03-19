@@ -36,7 +36,8 @@ function show(req, res) {
     const [movie] = movieResult;
     if (!movie) return handleResourceNotFound(res);
 
-    const reviewsSQL = "SELECT * FROM reviews WHERE movie_id = ?";
+    const reviewsSQL =
+      "SELECT * FROM reviews WHERE movie_id = ? ORDER BY created_at DESC";
     connection.query(reviewsSQL, [id], (err, reviewResult) => {
       if (err) return handleFailedQuery(err, res);
       movie.reviews = reviewResult;
