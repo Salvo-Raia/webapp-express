@@ -8,7 +8,7 @@ const {
 // Index controller
 function index(req, res) {
   const moviesSQL =
-    "SELECT movies.*, AVG(reviews.vote) as average_vote FROM db_movies.movies INNER JOIN reviews ON movie_id = reviews.movie_id GROUP BY movies.id ORDER BY movies.id ASC";
+    "SELECT movies.id, movies.title, movies.director, movies.genre, movies.release_year, movies.abstract, movies.image, AVG(reviews.vote) as average_vote FROM db_movies.movies INNER JOIN reviews ON movie_id = reviews.movie_id GROUP BY movies.id ORDER BY movies.id ASC";
   connection.query(moviesSQL, (err, moviesResult) => {
     if (err) return handleFailedQuery(err, res);
     const movies = moviesResult.map((movie) => {
