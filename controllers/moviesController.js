@@ -12,7 +12,11 @@ function index(req, res) {
   connection.query(moviesSQL, (err, moviesResult) => {
     if (err) return handleFailedQuery(err, res);
     const movies = moviesResult.map((movie) => {
-      return { ...movie, image: buildMovieImagePath(movie.image) };
+      return {
+        ...movie,
+        average_vote: parseInt(movie.average_vote),
+        image: buildMovieImagePath(movie.image),
+      };
     });
 
     res.json({
