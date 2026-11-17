@@ -1,6 +1,6 @@
-![Boolean Tech Academy](https://img.shields.io/badge/Boolean_Tech_Academy-001632?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Boolean_Tech_Academy-1565C0?style=for-the-badge)
 
-# 🎓 Exercise 49/50 - Express Web App Setup
+# 🎓 Exercise 49/50: Express Web App Setup
 
 Build a complete Express web application connected to a MySQL database, featuring endpoints to retrieve a list of movies and their details, including reviews.
 
@@ -17,15 +17,13 @@ Build a complete Express web application connected to a MySQL database, featurin
 
 Start building a complete web application using Express and MySQL, applying the concepts learned throughout the course.
 
-### Main Requirements
-
 - Use the provided database file to create a database with MySQL Workbench.
 - Set up a new Express application.
 - Connect the Express application to the MySQL database and verify that the connection works correctly.
 - Create an **INDEX** route to retrieve the list of movies.
 - Create a **SHOW** route to retrieve the details of a single movie, including its reviews.
 
-### Bonus
+### ⭐ Bonus
 
 Improve the application structure and functionality by implementing the following features:
 
@@ -53,5 +51,4 @@ Improve the application structure and functionality by implementing the followin
 
 ## ©️ Credits
 
-Exercise assigned by **Boolean Tech Academy** as part of the Web Development course - Class 152 - Year 2025-2026
-
+Exercise assigned by **Boolean Tech Academy** as part of the Web Development course (Class 152, A.Y. 2025–2026).
