@@ -20,7 +20,7 @@ Start building a complete web application using Express and MySQL, applying the 
 - Create an **INDEX** route to retrieve the list of movies.
 - Create a **SHOW** route to retrieve the details of a single movie, including its reviews.
 
-### Bonus challenge
+#### Bonus challenge
 
 Improve the application structure and functionality by implementing the following features:
 
