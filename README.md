@@ -24,12 +24,12 @@ Start building a complete web application using Express and MySQL, applying the 
 
 Improve the application structure and functionality by implementing the following features.
 
-- **Static Assets:** Add images to the Express project.
-- **Environment Variables:** Store database connection credentials and configuration in environment variables.
-- **Controllers:** Move API logic into dedicated controller files.
-- **Router:** Organize application routes using an Express router.
-- **Not Found Middleware:** Implement middleware to handle requests to non-existent routes.
-- **Error Handling Middleware:** Implement middleware to handle application errors.
+- **Static assets** - Add images to the Express project.
+- **Environment variables** - Store database connection credentials and configuration in environment variables.
+- **Controllers** - Move API logic into dedicated controller files.
+- **Router** - Organize application routes using an Express router.
+- **Not found middleware** - Implement middleware to handle requests to non-existent routes.
+- **Error handling middleware** - Implement middleware to handle application errors.
 
 ## Technologies
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) 
