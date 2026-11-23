@@ -8,7 +8,7 @@ Build a complete Express web application connected to a MySQL database, featurin
 
 | Repository | Project | Category | Main Focus | Exercise |
 |:--|:--|:--|:--|:--|
-| webapp-express | Express Web App Setup | Exercise | Express, MySQL integration & API architecture | 49/50 |
+| webapp-express | Express Web App Setup | Exercise | Express, MySQL & API architecture | 49/50 |
 
 ## Assignment
 
@@ -22,7 +22,7 @@ Start building a complete web application using Express and MySQL, applying the 
 
 #### Bonus challenge
 
-Improve the application structure and functionality by implementing the following features:
+Improve the application structure and functionality by implementing the following features.
 
 - **Static Assets:** Add images to the Express project.
 - **Environment Variables:** Store database connection credentials and configuration in environment variables.
