@@ -8,7 +8,7 @@ Build a complete Express web application connected to a MySQL database, featurin
 
 | Repository | Project | Category | Main Focus | Exercise |
 |:--|:--|:--|:--|:--|
-| webapp-express | Express Web App Setup | Exercise | Express, MySQL & API architecture | 49/50 |
+| webapp-express | Express Web App Setup | Exercise | Express, MySQL, API architecture | 49/50 |
 
 ## Assignment
 
@@ -32,11 +32,12 @@ Improve the application structure and functionality by implementing the followin
 - **Error handling middleware** - Implement middleware to handle application errors.
 
 ## Technologies
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) 
-![npm](https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white) 
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white) 
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) 
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![npm](https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 ![MySQL Workbench](https://img.shields.io/badge/MySQL_Workbench-4479A1?style=flat-square&logo=mysql&logoColor=white)
 
 ## What I learned
